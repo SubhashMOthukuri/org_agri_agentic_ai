@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# ML model files
+*.pkl
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# Data files (if large)
+data/*.csv
+data/*.json
+data/*.xlsx
+
+# Temporary files
+temp/
+tmp/

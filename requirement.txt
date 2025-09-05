@@ -1,0 +1,15 @@
+# Backend & Agents
+fastapi
+uvicorn
+pymongo
+pandas
+catboost
+torch
+langgraph
+openai
+
+# Frontend (optional if using npm)
+# react dependencies will be installed via npm/yarn
+
+# Utilities
+python-dotenv

@@ -1,0 +1,17 @@
+# Writing Rules - Enterprise Prototype (FAANG-style)
+
+1. Modular Design:
+   - Each agent and ML module must be fully modular and independently testable.
+   - Maintain clear input/output contracts for every function.
+
+2. Readability & Documentation:
+   - Use descriptive variable names, consistent formatting, and comments.
+   - Document all assumptions and data transformations.
+
+3. Version Control:
+   - One feature per branch; merge only after passing tests and review.
+   - Maintain changelog and architecture diagram updates.
+
+4. Data Handling:
+   - Validate all inputs; handle empty/loading/error/offline states.
+   - Use synthetic data for prototyping; clearly label mocks vs real data.
