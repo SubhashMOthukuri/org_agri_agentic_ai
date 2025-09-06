@@ -1,0 +1,48 @@
+{
+  "generation_timestamp": "2025-09-05T22:09:32.685123",
+  "enterprise_scale": true,
+  "total_records": 8931933,
+  "datasets": {
+    "iot_sensor": {
+      "records": 8892000,
+      "size_mb": 4105.94,
+      "columns": 13
+    },
+    "satellite": {
+      "records": 2390,
+      "size_mb": 0.87,
+      "columns": 20
+    },
+    "supply_chain": {
+      "records": 21299,
+      "size_mb": 19.65,
+      "columns": 22
+    },
+    "financial": {
+      "records": 3000,
+      "size_mb": 1.05,
+      "columns": 25
+    },
+    "anomalies": {
+      "records": 13244,
+      "size_mb": 7.79,
+      "columns": 16
+    }
+  },
+  "data_quality": {
+    "completeness": 100.0,
+    "consistency": 98.5,
+    "accuracy": 95.0,
+    "timeliness": "real_time_simulation"
+  },
+  "enterprise_features": [
+    "IoT sensor data with failures",
+    "Satellite imagery with vegetation indices",
+    "Supply chain logistics tracking",
+    "Financial analysis and market intelligence",
+    "Edge cases and anomaly scenarios",
+    "Real-time data patterns",
+    "Multi-dimensional relationships",
+    "Production-scale volumes"
+  ]
+}

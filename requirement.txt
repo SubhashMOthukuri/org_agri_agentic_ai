@@ -8,6 +8,12 @@ torch
 langgraph
 openai
 
+# Data Generation & Analysis
+matplotlib
+seaborn
+scipy
+numpy
+
 # Frontend (optional if using npm)
 # react dependencies will be installed via npm/yarn
 

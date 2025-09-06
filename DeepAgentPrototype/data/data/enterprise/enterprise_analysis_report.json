@@ -1,0 +1,404 @@
+{
+  "report_timestamp": "2025-09-05T22:11:31.820248",
+  "enterprise_readiness_score": 98.84,
+  "enterprise_readiness_assessment": {
+    "overall_score": 96.47,
+    "criteria": {
+      "data_volume": 100,
+      "data_quality": 98.836,
+      "data_diversity": 100,
+      "real_time_capability": 90,
+      "scalability": 100,
+      "monitoring": 90
+    },
+    "readiness_level": "Production Ready",
+    "production_ready": "True"
+  },
+  "total_datasets": 5,
+  "total_records": 8931933,
+  "analysis_results": {
+    "quality_metrics": {
+      "iot_sensor": {
+        "total_records": 8892000,
+        "total_columns": 13,
+        "completeness": 99.85,
+        "missing_data_percentage": 0.15,
+        "numeric_columns": 6,
+        "categorical_columns": 7,
+        "outlier_percentage": 2.88,
+        "duplicate_percentage": 0.0,
+        "memory_usage_mb": 4112.81,
+        "data_quality_score": 98.19
+      },
+      "satellite": {
+        "total_records": 2390,
+        "total_columns": 20,
+        "completeness": 100.0,
+        "missing_data_percentage": 0.0,
+        "numeric_columns": 16,
+        "categorical_columns": 4,
+        "outlier_percentage": 0.41,
+        "duplicate_percentage": 0.0,
+        "memory_usage_mb": 0.87,
+        "data_quality_score": 99.76
+      },
+      "supply_chain": {
+        "total_records": 21299,
+        "total_columns": 22,
+        "completeness": 100.0,
+        "missing_data_percentage": 0.0,
+        "numeric_columns": 10,
+        "categorical_columns": 11,
+        "outlier_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "memory_usage_mb": 15.26,
+        "data_quality_score": 100
+      },
+      "financial": {
+        "total_records": 3000,
+        "total_columns": 25,
+        "completeness": 100.0,
+        "missing_data_percentage": 0.0,
+        "numeric_columns": 22,
+        "categorical_columns": 3,
+        "outlier_percentage": 0.16,
+        "duplicate_percentage": 0.0,
+        "memory_usage_mb": 1.05,
+        "data_quality_score": 99.9
+      },
+      "anomalies": {
+        "total_records": 13244,
+        "total_columns": 16,
+        "completeness": 100.0,
+        "missing_data_percentage": 0.0,
+        "numeric_columns": 8,
+        "categorical_columns": 8,
+        "outlier_percentage": 6.12,
+        "duplicate_percentage": 0.0,
+        "memory_usage_mb": 7.82,
+        "data_quality_score": 96.33
+      }
+    },
+    "iot_analysis": {
+      "total_readings": 8892000,
+      "sensor_types": 12,
+      "farms_covered": 100,
+      "time_span_days": 29,
+      "sensor_distribution": {
+        "rainfall": 4320000,
+        "air_temperature": 864000,
+        "air_humidity": 864000,
+        "wind_speed": 864000,
+        "wind_direction": 864000,
+        "solar_radiation": 432000,
+        "soil_moisture": 288000,
+        "soil_temperature": 288000,
+        "ph_level": 72000,
+        "nutrient_nitrogen": 12000,
+        "nutrient_phosphorus": 12000,
+        "nutrient_potassium": 12000
+      },
+      "status_distribution": {
+        "active": 8714150,
+        "failed": 177850
+      },
+      "failure_rate": 2.0,
+      "battery_stats": {
+        "count": 8892000.0,
+        "mean": 38.23912055780477,
+        "std": 36.18433352561979,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 33.405,
+        "75%": 73.57,
+        "max": 100.0
+      },
+      "signal_stats": {
+        "count": 8892000.0,
+        "mean": 0.7999885879944872,
+        "std": 0.11548643247276222,
+        "min": 0.6000000654608909,
+        "25%": 0.6999525118790848,
+        "50%": 0.799926375746984,
+        "75%": 0.9000517445890838,
+        "max": 0.9999999046601342
+      },
+      "readings_per_farm": 88920.0,
+      "readings_per_day": 306621.0
+    },
+    "satellite_analysis": {
+      "total_observations": 2390,
+      "farms_covered": 100,
+      "vegetation_indices": {
+        "ndvi": {
+          "mean": 0.2338,
+          "std": 0.1016,
+          "min": -0.1297,
+          "max": 0.5563
+        },
+        "ndwi": {
+          "mean": 0.1155,
+          "std": 0.0989,
+          "min": -0.2271,
+          "max": 0.4715
+        },
+        "evi": {
+          "mean": 0.1249,
+          "std": 0.1017,
+          "min": -0.186,
+          "max": 0.4696
+        },
+        "savi": {
+          "mean": 0.1769,
+          "std": 0.1009,
+          "min": -0.123,
+          "max": 0.4608
+        },
+        "gci": {
+          "mean": 0.0625,
+          "std": 0.1016,
+          "min": -0.2691,
+          "max": 0.4403
+        }
+      },
+      "health_stats": {
+        "count": 2390.0,
+        "mean": 15.604960669456068,
+        "std": 6.132122998107522,
+        "min": 0.0,
+        "25%": 11.563500000000001,
+        "50%": 15.6195,
+        "75%": 19.745,
+        "max": 34.069
+      },
+      "health_distribution": {
+        "Poor": 2354,
+        "Fair": 21,
+        "Good": 0,
+        "Excellent": 0
+      },
+      "growth_distribution": {
+        "germination": 2390
+      },
+      "cloud_stats": {
+        "count": 2390.0,
+        "mean": 0.14960751342769665,
+        "std": 0.08544120885502103,
+        "min": 4.95179786455302e-05,
+        "25%": 0.07834025109661201,
+        "50%": 0.14903775583020576,
+        "75%": 0.21960202694490472,
+        "max": 0.2999455771162974
+      },
+      "clear_images_percentage": 31.92
+    },
+    "supply_chain_analysis": {
+      "total_events": 21299,
+      "event_types": 6,
+      "crops_tracked": 12,
+      "event_distribution": {
+        "storage": 3652,
+        "harvest": 3598,
+        "processing": 3531,
+        "delivery": 3519,
+        "transport": 3516,
+        "quality_check": 3483
+      },
+      "crop_distribution": {
+        "Spinach": 1890,
+        "Carrot": 1825,
+        "Pepper": 1818,
+        "Tomato": 1807,
+        "Broccoli": 1791,
+        "Cucumber": 1786,
+        "Corn": 1767,
+        "Soybean": 1760,
+        "Lettuce": 1748,
+        "Onion": 1716,
+        "Potato": 1715,
+        "Wheat": 1676
+      },
+      "status_distribution": {
+        "delayed": 5487,
+        "delivered": 5286,
+        "pending": 5284,
+        "in_transit": 5242
+      },
+      "on_time_delivery_rate": 24.82,
+      "cost_analysis": {
+        "price_per_ton": {
+          "mean": 552.78,
+          "median": 553.9,
+          "std": 259.06
+        },
+        "transport_cost": {
+          "mean": 275.64,
+          "median": 277.17,
+          "std": 129.77
+        },
+        "storage_cost": {
+          "mean": 54.98,
+          "median": 55.12,
+          "std": 26.03
+        },
+        "fuel_cost": {
+          "mean": 110.74,
+          "median": 111.09,
+          "std": 52.19
+        }
+      },
+      "risk_distribution": {
+        "quality_issues": 4297,
+        "traffic": 4273,
+        "weather": 4272,
+        "none": 4234,
+        "equipment_failure": 4223
+      },
+      "quality_distribution": {
+        "C": 7157,
+        "A": 7089,
+        "B": 7053
+      }
+    },
+    "financial_analysis": {
+      "total_records": 3000,
+      "farms_analyzed": 100,
+      "revenue_stats": {
+        "count": 3000.0,
+        "mean": 26251.156573333334,
+        "std": 14149.712215116637,
+        "min": 1018.44,
+        "25%": 13935.455,
+        "50%": 26839.815000000002,
+        "75%": 38505.9675,
+        "max": 49999.52
+      },
+      "profit_stats": {
+        "count": 3000.0,
+        "mean": -2313.840203333333,
+        "std": 2746.8673398312367,
+        "min": -14340.67,
+        "25%": -3805.525,
+        "50%": -1703.74,
+        "75%": -400.2025,
+        "max": 7036.35
+      },
+      "profitability_rate": 14.43,
+      "cost_analysis": {
+        "operating_costs": {
+          "mean": 10459.14,
+          "median": 10518.07,
+          "std": 5882.2
+        },
+        "labor_costs": {
+          "mean": 6548.61,
+          "median": 6534.75,
+          "std": 3633.12
+        },
+        "equipment_costs": {
+          "mean": 3950.6,
+          "median": 3936.6,
+          "std": 2292.9
+        },
+        "seed_costs": {
+          "mean": 2617.25,
+          "median": 2396.82,
+          "std": 1659.53
+        },
+        "fertilizer_costs": {
+          "mean": 1960.36,
+          "median": 1904.56,
+          "std": 1147.1
+        },
+        "pesticide_costs": {
+          "mean": 1321.22,
+          "median": 1167.67,
+          "std": 879.75
+        },
+        "fuel_costs": {
+          "mean": 1707.82,
+          "median": 1553.3,
+          "std": 1102.47
+        },
+        "total_costs": {
+          "mean": 28565.0,
+          "median": 29045.12,
+          "std": 15577.25
+        }
+      },
+      "market_analysis": {
+        "market_demand_index": {
+          "mean": 0.998,
+          "std": 0.287
+        },
+        "market_share": {
+          "mean": 0.175,
+          "std": 0.072
+        }
+      }
+    },
+    "anomaly_analysis": {
+      "total_anomalies": 13244,
+      "anomaly_types": 10,
+      "anomaly_distribution": {
+        "regulatory_changes": 4122,
+        "market_crash": 2502,
+        "sensor_malfunction": 1469,
+        "data_quality_issues": 1048,
+        "supply_chain_disruption": 951,
+        "pest_epidemic": 944,
+        "disease_outbreak": 865,
+        "extreme_weather": 602,
+        "equipment_failure": 496,
+        "cyber_security_breach": 245
+      },
+      "severity_distribution": {
+        "high": 8177,
+        "critical": 2054,
+        "medium": 1965,
+        "low": 1048
+      },
+      "affected_systems": {
+        "['general']": 11202,
+        "['pest_monitoring'": 944,
+        " 'crop_health'": 944,
+        " 'yield_prediction']": 944,
+        "['weather_sensors'": 602,
+        " 'irrigation'": 602,
+        " 'greenhouse_controls']": 602,
+        "['irrigation'": 496,
+        " 'harvesting'": 496,
+        " 'monitoring']": 496
+      },
+      "loss_stats": {
+        "count": 13244.0,
+        "mean": 14311.221613567748,
+        "std": 15679.486873955122,
+        "min": 541.627203315776,
+        "25%": 5753.686781294633,
+        "50%": 11237.834201813554,
+        "75%": 16649.791391250277,
+        "max": 97927.67178546952
+      },
+      "total_estimated_loss": 189537819.05,
+      "recovery_stats": {
+        "count": 13244.0,
+        "mean": 6.736182422228934,
+        "std": 4.15765921347728,
+        "min": 1.0,
+        "25%": 3.0,
+        "50%": 6.0,
+        "75%": 10.0,
+        "max": 20.0
+      }
+    }
+  },
+  "recommendations": [
+    "Set up MongoDB cluster for data storage",
+    "Implement Redis for real-time caching",
+    "Deploy Apache Kafka for data streaming",
+    "Set up monitoring with Prometheus and Grafana",
+    "Implement data backup and disaster recovery",
+    "Add data encryption and security measures"
+  ]
+}

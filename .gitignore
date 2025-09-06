@@ -48,3 +48,5 @@ data/*.xlsx
 # Temporary files
 temp/
 tmp/
+*.csv
+data/enterprise/*.csv
