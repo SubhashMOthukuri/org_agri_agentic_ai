@@ -97,10 +97,10 @@ Following **Clean Architecture** and **Domain-Driven Design (DDD)** patterns use
 - **Enterprise-Grade:** Principal AI Engineer level visualizations
 
 #### Dashboard Screenshots:
-![Data Overview Dashboard](DeepAgentPrototype/data_layer/visualization/dashboard_images/dashborad_1.png)
+![Data Overview Dashboard](src/infrastructure/database/visualization/dashboard_images/dashborad_1.png)
 *Comprehensive data overview with key metrics and trends*
 
-![IoT Sensor Analysis](DeepAgentPrototype/data_layer/visualization/dashboard_images/dashborad_2.png)
+![IoT Sensor Analysis](src/infrastructure/database/visualization/dashboard_images/dashborad_2.png)
 *Real-time IoT sensor data analysis and monitoring*
 
 ### **Phase 5: Metrics System - COMPLETED ✅**
