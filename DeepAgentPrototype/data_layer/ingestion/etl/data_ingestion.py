@@ -18,7 +18,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 sys.path.insert(0, project_root)
 
 from DeepAgentPrototype.data_layer.database.mongodb.mongodb_setup import MongoDBManager
-from DeepAgentPrototype.data_layer.models import (
+from DeepAgentPrototype.data_layer.models.models import (
     IoTSensorData, SatelliteData, SupplyChainData, 
     FinancialData, AnomalyData, SensorType, AnomalyType, 
     SeverityLevel, SupplyChainStatus, TransportationMode, 

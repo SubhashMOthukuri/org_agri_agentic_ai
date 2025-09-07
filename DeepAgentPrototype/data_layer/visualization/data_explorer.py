@@ -39,7 +39,7 @@ class DataExplorer:
         try:
             datasets = {}
             
-            if not self.mongo_manager or not self.mongo_manager.is_connected():
+            if not self.mongo_manager or not hasattr(self.mongo_manager, 'db'):
                 logger.error("MongoDB not connected")
                 return datasets
             
@@ -252,11 +252,11 @@ class DataExplorer:
             row=1, col=1
         )
         
-        # Transportation modes
+        # Transportation modes bar chart (replacing pie chart for subplot compatibility)
         transport_counts = supply_df['transportation_mode'].value_counts()
         fig.add_trace(
-            go.Pie(labels=transport_counts.index, values=transport_counts.values,
-                   name="Transportation Modes"),
+            go.Bar(x=transport_counts.index, y=transport_counts.values,
+                   name="Transportation Modes", marker_color=self.colors['secondary']),
             row=1, col=2
         )
         

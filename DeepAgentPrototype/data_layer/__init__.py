@@ -13,7 +13,7 @@ Version: 1.0.0
 """
 
 from .database.mongodb.mongodb_setup import MongoDBManager
-from .models import (
+from .models.models import (
     IoTSensorData, SatelliteData, SupplyChainData, 
     FinancialData, AnomalyData, SensorType, AnomalyType,
     SeverityLevel, SupplyChainStatus, TransportationMode,

@@ -21,8 +21,8 @@ from pathlib import Path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 sys.path.insert(0, project_root)
 
-from data_layer.database.mongodb.mongodb_setup import MongoDBManager
-from data_layer.visualization.data_explorer import DataExplorer
+from DeepAgentPrototype.data_layer.database.mongodb.mongodb_setup import MongoDBManager
+from DeepAgentPrototype.data_layer.visualization.data_explorer import DataExplorer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
