@@ -8,6 +8,7 @@ import { YieldPrediction } from './YieldPrediction';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
+import { PerformanceMonitor, PerformanceTips } from '../ui/PerformanceMonitor';
 
 type DashboardTab = 'overview' | 'weather' | 'market' | 'pest' | 'yield' | 'settings';
 
@@ -33,7 +34,7 @@ export const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex gpu-accelerated">
       <Sidebar
         activeTab={activeTab}
         onTabChange={setActiveTab}
@@ -53,7 +54,12 @@ export const Dashboard: React.FC = () => {
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              mass: 1
+            }}
           >
             {renderContent()}
           </motion.div>
@@ -61,6 +67,10 @@ export const Dashboard: React.FC = () => {
         
         <Footer />
       </div>
+      
+      {/* Performance Monitoring */}
+      <PerformanceMonitor show={process.env.NODE_ENV === 'development'} />
+      <PerformanceTips />
     </div>
   );
 };

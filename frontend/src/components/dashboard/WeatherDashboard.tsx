@@ -20,6 +20,8 @@ export const WeatherDashboard: React.FC<WeatherDashboardProps> = ({ farmId }) =>
       timeframe: '7d'
     }),
     refetchInterval: 30000, // Refetch every 30 seconds
+    staleTime: 10000, // Consider data stale after 10 seconds
+    cacheTime: 300000, // Keep in cache for 5 minutes
   });
 
   if (isLoading) {

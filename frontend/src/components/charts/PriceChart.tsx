@@ -9,21 +9,8 @@ interface PriceChartProps {
 }
 
 export const PriceChart: React.FC<PriceChartProps> = ({ crop, timeframe, data }) => {
-  // Mock data - replace with real API data
-  const chartData = [
-    { date: '2024-01', price: 220 },
-    { date: '2024-02', price: 235 },
-    { date: '2024-03', price: 245 },
-    { date: '2024-04', price: 250 },
-    { date: '2024-05', price: 240 },
-    { date: '2024-06', price: 245 },
-    { date: '2024-07', price: 255 },
-    { date: '2024-08', price: 260 },
-    { date: '2024-09', price: 258 },
-    { date: '2024-10', price: 262 },
-    { date: '2024-11', price: 265 },
-    { date: '2024-12', price: 270 },
-  ];
+  // Use real API data or fallback to empty array
+  const chartData = data?.price_history || [];
 
   const getTimeframeData = () => {
     switch (timeframe) {

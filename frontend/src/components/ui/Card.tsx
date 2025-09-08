@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
+import { hoverHandlers, animations } from '../../utils/animations';
+import { use90Hz } from '../../hooks/use90Hz';
 
 interface CardProps {
   children: React.ReactNode;
@@ -15,20 +17,40 @@ export const Card: React.FC<CardProps> = ({
   hover = true, 
   padding = 'md' 
 }) => {
+  const { controls, hoverAnimation, resetAnimation } = use90Hz();
+  
   const paddingClasses = {
     sm: 'p-4',
     md: 'p-6',
     lg: 'p-8'
   };
 
+  const handleMouseEnter = () => {
+    if (hover) {
+      hoverAnimation(1.02);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (hover) {
+      resetAnimation();
+    }
+  };
+
   return (
     <motion.div
-      whileHover={hover ? { y: -2, boxShadow: '0 10px 25px rgba(0,0,0,0.1)' } : {}}
+      animate={controls}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={clsx(
         'bg-white rounded-xl border border-gray-200 shadow-card',
         paddingClasses[padding],
         className
       )}
+      style={{
+        willChange: 'transform, box-shadow', // Optimize for 90Hz
+        transform: 'translateZ(0)', // Force hardware acceleration
+      }}
     >
       {children}
     </motion.div>

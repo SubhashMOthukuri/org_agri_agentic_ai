@@ -24,6 +24,8 @@ export const MarketIntelligence: React.FC<MarketIntelligenceProps> = ({ farmId }
       timeframe: timeframe
     }),
     refetchInterval: 60000, // Refetch every minute
+    staleTime: 30000, // Consider data stale after 30 seconds
+    cacheTime: 600000, // Keep in cache for 10 minutes
   });
 
   if (isLoading) {

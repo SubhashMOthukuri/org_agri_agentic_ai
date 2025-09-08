@@ -10,7 +10,7 @@ export const WeatherChart: React.FC<WeatherChartProps> = ({ data }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    if (!svgRef.current || !data?.forecast) return;
+    if (!svgRef.current || !data?.forecast || data.forecast.length === 0) return;
 
     const svg = d3.select(svgRef.current);
     const width = 800;
@@ -20,7 +20,7 @@ export const WeatherChart: React.FC<WeatherChartProps> = ({ data }) => {
     // Clear previous content
     svg.selectAll('*').remove();
 
-    // Create scales
+    // Create scales with real data
     const xScale = d3.scaleTime()
       .domain(d3.extent(data.forecast, (d: any) => new Date(d.date)))
       .range([margin.left, width - margin.right]);
@@ -64,22 +64,24 @@ export const WeatherChart: React.FC<WeatherChartProps> = ({ data }) => {
       .attr('fill', '#22c55e')
       .attr('opacity', 0.8);
 
-    // Add precipitation bars
-    const precipitationScale = d3.scaleLinear()
-      .domain([0, d3.max(data.forecast, (d: any) => d.precipitation_probability) || 1])
-      .range([0, 20]);
+    // Add precipitation bars if data exists
+    if (data.forecast.some((d: any) => d.precipitation_probability !== undefined)) {
+      const precipitationScale = d3.scaleLinear()
+        .domain([0, d3.max(data.forecast, (d: any) => d.precipitation_probability) || 1])
+        .range([0, 20]);
 
-    svg.selectAll('.precipitation')
-      .data(data.forecast)
-      .enter()
-      .append('rect')
-      .attr('class', 'precipitation')
-      .attr('x', d => xScale(new Date(d.date)) - 5)
-      .attr('y', height - margin.bottom - precipitationScale(d.precipitation_probability))
-      .attr('width', 10)
-      .attr('height', d => precipitationScale(d.precipitation_probability))
-      .attr('fill', '#3b82f6')
-      .attr('opacity', 0.6);
+      svg.selectAll('.precipitation')
+        .data(data.forecast)
+        .enter()
+        .append('rect')
+        .attr('class', 'precipitation')
+        .attr('x', d => xScale(new Date(d.date)) - 5)
+        .attr('y', height - margin.bottom - precipitationScale(d.precipitation_probability))
+        .attr('width', 10)
+        .attr('height', d => precipitationScale(d.precipitation_probability))
+        .attr('fill', '#3b82f6')
+        .attr('opacity', 0.6);
+    }
 
   }, [data]);
 
