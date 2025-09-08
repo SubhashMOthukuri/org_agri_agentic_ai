@@ -1,70 +1,320 @@
-# Getting Started with Create React App
+# 🌾 Agricultural AI Dashboard - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**FAANG-Level React Frontend** for Organic Agriculture Agentic AI System
 
-## Available Scripts
+## 🚀 **Quick Start**
 
-In the project directory, you can run:
+### **Prerequisites**
+- Node.js 16+ 
+- npm or yarn
+- Backend API running on `http://localhost:8000`
 
-### `npm start`
+### **Installation & Setup**
+```bash
+# Install dependencies
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Start development server
+npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Open browser to http://localhost:3000
+```
 
-### `npm test`
+### **Environment Configuration**
+Create a `.env` file in the frontend directory:
+```env
+REACT_APP_API_BASE_URL=http://localhost:8000
+REACT_APP_WS_URL=ws://localhost:8000/ws
+REACT_APP_MAPBOX_TOKEN=your_mapbox_token_here
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗️ **Architecture**
 
-### `npm run build`
+### **Technology Stack**
+- **Framework:** React 18 + TypeScript
+- **State Management:** React Query + Zustand
+- **Styling:** Tailwind CSS + Framer Motion
+- **Charts:** D3.js + Recharts
+- **AI/ML:** TensorFlow.js
+- **Icons:** Heroicons
+- **HTTP Client:** Axios
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Project Structure**
+```
+src/
+├── components/
+│   ├── ui/                    # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Badge.tsx
+│   │   └── Input.tsx
+│   ├── auth/                  # Authentication components
+│   │   └── LoginForm.tsx
+│   ├── dashboard/             # Dashboard components
+│   │   ├── Dashboard.tsx
+│   │   ├── Header.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── WeatherDashboard.tsx
+│   │   ├── MarketIntelligence.tsx
+│   │   ├── PestDetection.tsx
+│   │   └── YieldPrediction.tsx
+│   └── charts/                # Chart components
+│       ├── WeatherChart.tsx
+│       └── PriceChart.tsx
+├── contexts/                  # React contexts
+│   ├── AppProvider.tsx
+│   └── AuthContext.tsx
+├── services/                  # API services
+│   ├── api.ts
+│   └── websocket.ts
+├── types/                     # TypeScript types
+│   └── api.ts
+├── config/                    # Configuration
+│   └── environment.ts
+└── App.tsx                    # Main app component
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎨 **Features**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Dashboard Components**
+- **Weather Intelligence:** Real-time weather monitoring with D3.js charts
+- **Market Analysis:** Price predictions and market trends
+- **Pest Detection:** AI-powered pest and disease monitoring
+- **Yield Prediction:** ML-based yield forecasting
+- **Real-time Updates:** WebSocket integration for live data
 
-### `npm run eject`
+### **UI/UX Features**
+- **Responsive Design:** Mobile-first approach
+- **Smooth Animations:** Framer Motion micro-interactions
+- **Dark/Light Theme:** Tailwind CSS theming
+- **Accessibility:** WCAG 2.1 compliant
+- **Performance:** Optimized with React Query caching
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Authentication**
+- **JWT Token Management:** Secure authentication
+- **Auto-refresh:** Token renewal handling
+- **Protected Routes:** Route-based access control
+- **User Management:** Profile and settings
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔌 **API Integration**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Available Endpoints**
+- **Authentication:** `/auth/login`, `/auth/me`
+- **Weather:** `/agents/weather`
+- **Market:** `/agents/market`
+- **Pest Detection:** `/agents/pest`
+- **Yield Prediction:** `/agents/prediction`
+- **Decision Support:** `/agents/decision`
+- **Metrics:** `/metrics`
+- **Health Check:** `/health`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **Real-time Updates**
+- **WebSocket:** `ws://localhost:8000/ws`
+- **Message Types:** `weather_update`, `pest_alert`, `market_update`, `system_alert`
 
-## Learn More
+## 🎯 **Usage Examples**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Weather Dashboard**
+```typescript
+import { WeatherDashboard } from './components/dashboard/WeatherDashboard';
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<WeatherDashboard farmId="farm_123" />
+```
 
-### Code Splitting
+### **API Client Usage**
+```typescript
+import apiClient from './services/api';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+// Get weather data
+const weatherData = await apiClient.getWeatherAnalysis({
+  farm_id: 'farm_123',
+  analysis_type: 'current',
+  timeframe: '7d'
+});
 
-### Analyzing the Bundle Size
+// Get market data
+const marketData = await apiClient.getMarketAnalysis({
+  crop_type: 'wheat',
+  region: 'North America',
+  analysis_type: 'price_prediction',
+  timeframe: '6m'
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **WebSocket Integration**
+```typescript
+import websocketService from './services/websocket';
 
-### Making a Progressive Web App
+// Subscribe to weather updates
+const unsubscribe = websocketService.subscribe('weather_update', (data) => {
+  console.log('Weather update:', data);
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+// Send message
+websocketService.send({ type: 'ping', data: {} });
+```
 
-### Advanced Configuration
+## 🎨 **Design System**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### **Color Palette**
+- **Primary Green:** `#22c55e` (Agriculture, Growth)
+- **Secondary Blue:** `#3b82f6` (Information, Sky)
+- **Warning Yellow:** `#eab308` (Caution, Sun)
+- **Error Red:** `#ef4444` (Alerts, Critical)
+- **Info Purple:** `#8b5cf6` (AI, Technology)
 
-### Deployment
+### **Typography**
+- **Primary Font:** Inter (Google Fonts)
+- **Monospace:** JetBrains Mono
+- **Scale:** 12px - 48px (responsive)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **Components**
+- **Buttons:** 5 variants (primary, secondary, outline, ghost, danger)
+- **Cards:** Hover effects, shadows, padding variants
+- **Badges:** Status indicators with animations
+- **Inputs:** Form controls with validation
 
-### `npm run build` fails to minify
+## 🚀 **Development**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **Available Scripts**
+```bash
+npm start          # Start development server
+npm run build      # Build for production
+npm test           # Run tests
+npm run eject      # Eject from Create React App
+```
+
+### **Code Quality**
+- **TypeScript:** Full type safety
+- **ESLint:** Code linting
+- **Prettier:** Code formatting
+- **Husky:** Git hooks
+
+### **Performance**
+- **Code Splitting:** Lazy loading
+- **Memoization:** React.memo, useMemo
+- **Caching:** React Query
+- **Bundle Analysis:** Webpack Bundle Analyzer
+
+## 🔧 **Configuration**
+
+### **Tailwind CSS**
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        green: { /* Custom green palette */ },
+        brown: { /* Earth tones */ },
+        blue: { /* Sky colors */ }
+      }
+    }
+  }
+}
+```
+
+### **React Query**
+```typescript
+// Query configuration
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 3,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      cacheTime: 10 * 60 * 1000, // 10 minutes
+    }
+  }
+});
+```
+
+## 🧪 **Testing**
+
+### **Test Setup**
+```bash
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
+```
+
+### **Test Files**
+- **Unit Tests:** `*.test.tsx`
+- **Integration Tests:** `*.integration.test.tsx`
+- **E2E Tests:** `cypress/integration/*.spec.js`
+
+## 📱 **Responsive Design**
+
+### **Breakpoints**
+- **Mobile:** 320px - 640px
+- **Tablet:** 640px - 1024px
+- **Desktop:** 1024px - 1280px
+- **Large Desktop:** 1280px+
+
+### **Grid System**
+- **Mobile:** 1 column
+- **Tablet:** 2 columns
+- **Desktop:** 3 columns
+- **Large Desktop:** 4 columns
+
+## 🚀 **Deployment**
+
+### **Production Build**
+```bash
+npm run build
+```
+
+### **Environment Variables**
+```env
+REACT_APP_API_BASE_URL=https://api.yourapp.com
+REACT_APP_WS_URL=wss://ws.yourapp.com
+REACT_APP_MAPBOX_TOKEN=pk.your_token
+```
+
+### **Docker Support**
+```dockerfile
+FROM node:16-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+## 🤝 **Contributing**
+
+### **Development Workflow**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+### **Code Style**
+- Use TypeScript for all new files
+- Follow the existing component structure
+- Add proper error handling
+- Include JSDoc comments
+
+## 📄 **License**
+
+This project is part of the Organic Agriculture Agentic AI System.
+
+## 🆘 **Support**
+
+For support and questions:
+- **Documentation:** `/docs/frontend/`
+- **API Reference:** `/docs/api/backend_endpoints.md`
+- **Issues:** GitHub Issues
+
+---
+
+**Built with ❤️ for the future of agriculture** 🌾
